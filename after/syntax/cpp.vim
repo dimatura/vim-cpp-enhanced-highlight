@@ -1319,6 +1319,17 @@ if !exists("cpp_no_boost")
     syntax keyword cppSTLcast lexical_cast
 endif " Boost
 
+" stuff I use (dimatura)
+" TODO automatically get a list. use tags?
+syntax keyword cppMisc Ptr ConstPtr
+syntax keyword cppPCL pcl PointXYZ PointXYZRGB PointXYZRGBA PointNormal PointSurfel PointWithRange PointWithViewpoint PointXYZLAB PointXYZI PointXYZL PointCloud PCLPointCloud
+" TODO regex for Eigen types
+syntax keyword cppEigen Eigen Matrix MatrixXf MatrixXd Matrix4f Matrix4d Vector4f Vector4d Vector3f Vector3d Vector3i Vector4i Vector2f Vector2f Vector2i VectorXf VectorXi VectorXd Map Array ArrayXd ArrayXf AngleAxis DiagonalMatrix EigenSolver Homogeneous JacobiSVD JacobiRotation Quaternion Rotation2D Sparse SparseMatrix SparseVector Stride Transform Affine2d Affine2f Affine3d Affine3f Isometry Isometry3d Projective Quaterniond Quaternionf RowVector3f RowVector3d RowVector2d RowVector2f
+syntax keyword cppBoost boost BOOST_FOREACH format
+syntax keyword cppROS ros sensor_msgs actionlib actionlib_msgs bond geometry_msgs Point Point32 PointStamped Pose Pose2D PoseStamped PoseWithCovariance Quaternion QuaternionStamped Transform TransformStamped Twist TwistStamped nav_msgs Odometry sensor_msgs Image CameraInfo LaserScan LaserEcho PointField Range std_msgs String Time Duration TFMessage Vector3 PointCloud2 visualization_msgs tf Transform Marker MarkerArray InteractiveMarker ROS_INFO ROS_INFO_STREAM ROS_DEBUG ROS_DEBUG_STREAM ROS_WARN ROS_WARN_STREAM ROS_ERROR ROS_ERROR_STREAM ROS_FATAL ROS_FATAL_STREAM ROS_ASSERT
+syntax keyword cppDM dm ca CA
+syntax keyword cppCV cv CvMat IplImage Mat Mat_ Matx Point Point_ Point3_ Point3i Point3d Point3f Point2f DataType Size_ Vec Point3_ Vec_ Scalar Rect Rect_ Range MatND SparseMat uchar Scalar Scalar_ Size Size_ TermCriteria
+
 " Default highlighting
 if version >= 508 || !exists("did_cpp_syntax_inits")
   if version < 508
@@ -1338,5 +1349,12 @@ if version >= 508 || !exists("did_cpp_syntax_inits")
   HiLink cppSTLenum         Typedef
   HiLink cppSTLios          Function
   HiLink cppSTLcast         Statement " be consistent with official syntax
+  HiLink cppMisc            Typedef
+  HiLink cppPCL             Typedef
+  HiLink cppEigen           Typedef
+  HiLink cppBoost           Typedef
+  HiLink cppROS             Typedef
+  HiLink cppDM              Typedef
+  HiLink cppCV              Typedef
   delcommand HiLink
 endif
